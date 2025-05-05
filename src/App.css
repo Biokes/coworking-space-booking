@@ -64,3 +64,30 @@
 .readMoreButton:hover::after {
   left: -100%;
 }
+.navlinks * {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  background: none;
+  border: none;
+  overflow: hidden;
+  width: auto;
+  text-wrap: nowrap;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.navlinks *::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navlinks *:hover::after {
+  width: 100%;
+}
