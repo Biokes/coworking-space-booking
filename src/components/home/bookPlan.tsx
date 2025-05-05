@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 type DeskType = {
     id: number;
     name: string;
@@ -8,7 +9,8 @@ type DeskType = {
   
   type TierType = 'basic' | 'premium' | 'executive';
   
-  const BookPlan = () => {
+export default function BookPlan (){
+      
     const [toasts, setToasts] = useState<Array<{ id: string, title: string, description: string, variant?: string }>>([]);
     
     const [desks, setDesks] = useState<DeskType[]>(() => {
@@ -273,17 +275,17 @@ type DeskType = {
             </div>
             
             {(!selectedDesk || selectedDesk.type === 'individual') && (
-              <div className="mb-4">
+              <div className="mb-4 text-gray-700">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Membership Tier
                 </label>
                 <div className="grid grid-cols-3 gap-2">
                   <button
                     type="button"
-                    className={`p-2 border rounded-md text-center text-sm transition-all ${
+                    className={`p-2 border rounded-md text-center text-sm transition-all text-gray-700 ${
                       tier === 'basic' 
-                        ? "border-brand-purple bg-brand-purple/10 text-brand-purple" 
-                        : "border-gray-200 hover:border-brand-purple"
+                        ? "border-brand-purple bg-brand-purple/10 " 
+                        : "border-gray-200"
                     }`}
                     onClick={() => setTier('basic')}
                   >
@@ -294,7 +296,7 @@ type DeskType = {
                     type="button"
                     className={`p-2 border rounded-md text-center text-sm transition-all ${
                       tier === 'premium' 
-                        ? "border-brand-purple bg-brand-purple/10 text-brand-purple" 
+                        ? "border-brand-purple bg-brand-purple/10 " 
                         : "border-gray-200 hover:border-brand-purple"
                     }`}
                     onClick={() => setTier('premium')}
@@ -306,7 +308,7 @@ type DeskType = {
                     type="button"
                     className={`p-2 border rounded-md text-center text-sm transition-all ${
                       tier === 'executive' 
-                        ? "border-brand-purple bg-brand-purple/10 text-brand-purple" 
+                        ? "border-brand-purple bg-brand-purple/10 " 
                         : "border-gray-200 hover:border-brand-purple"
                     }`}
                     onClick={() => setTier('executive')}
@@ -460,5 +462,3 @@ type DeskType = {
       </div>
     );
   };
-  
-  export default BookPlan;
