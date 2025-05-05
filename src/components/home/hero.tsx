@@ -2,7 +2,7 @@ import '../../App.css';
 
 export default function Hero() { 
     return (
-        <main className={'h-[400px] text-white items-center justify-center w-full'}>
+        <main className={'text-white items-center justify-center w-full'}>
             <section className='flex flex-col justify-start items-start px-[10%] sm:px-[7%] gap-1 w-full'>
                 <h6>
                     Book your ideal workspace

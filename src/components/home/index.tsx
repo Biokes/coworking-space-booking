@@ -6,10 +6,13 @@ import BookPlan from './bookPlan'
 
 export default function Homepage() {
     return (
-        <main>
+        <main className='mb-[20px]'>
             <Navbar />
-            <Hero />
+            {/* <Hero /> */}
+            <div className='p-[20px] sm:p-[2%]'>
             <BookPlan />
+            </div>
+            
         </main>
     )
 }
